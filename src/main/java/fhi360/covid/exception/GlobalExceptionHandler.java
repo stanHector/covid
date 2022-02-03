@@ -33,7 +33,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(PasscodeExistsException.class)
-    public ResponseEntity<?> EmailExistsException(PasscodeExistsException ex, WebRequest request) {
+    public ResponseEntity<?> PasscodeExistsException(PasscodeExistsException ex, WebRequest request) {
         ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getMessage(), request.getDescription(false));
         return new ResponseEntity<>(errorDetails, HttpStatus.CONFLICT);
     }
